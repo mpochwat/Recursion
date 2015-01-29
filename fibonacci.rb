@@ -1,20 +1,13 @@
 def fibs(num, result=[])
   for i in 1..num
-  	if i == 1 || i == 2
-  		result << 1
-  	else
-  		result << result[-1] + result[-2]
-  	end
+  	num = ( i == 1 || i == 2 ) ? 1 : result[-1] + result[-2]
+  	result << num
   end
   result
 end
 
 def fibonacci(n)
-	if n == 1 || n == 2
-		1
-	else
-		fibonacci(n-1) + fibonacci(n-2)
-	end
+  	fib_num = ( n == 1 || n == 2 ) ? 1 : fibonacci(n-1) + fibonacci(n-2)
 end
 
 def fibs_rec(num, result=[])
@@ -28,14 +21,14 @@ def fibs_rec(num, result=[])
 	result
 end
 
-p fibs_rec(0)
-p fibs_rec(1)
-p fibs_rec(2)
-p fibs_rec(5)
-p fibs_rec(10)
+p fibs(0) #=> []
+p fibs(1) #=> [1]
+p fibs(2) #=> [1,1]
+p fibs(5) #=> [1,1,2,3,5]
+p fibs(10) #=> [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
 
-p fibs(0)
-p fibs(1)
-p fibs(2)
-p fibs(5)
-p fibs(10)
+p fibs_rec(0) #=> []
+p fibs_rec(1) #=> [1]
+p fibs_rec(2) #=> [1,1]
+p fibs_rec(5) #=> [1,1,2,3,5]
+p fibs_rec(10) #=> [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
